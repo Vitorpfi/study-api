@@ -12,7 +12,7 @@ jobs:
 
     runs-on: ubuntu-latest
     env: 
-      DOCKER_USER: vitorPfi
+      DOCKER_USER: vitorpfi
       DOCKER_PASSWORD: dckr_pat_TbshBzswebv-BIadYWNL1Oq7MbE
       REPOSITORY: study-api
        
@@ -21,8 +21,8 @@ jobs:
     - name: docker login
 
       run: |
-        docker login -u vitorPfi -p dckr_pat_TbshBzswebv-BIadYWNL1Oq7MbE
+        docker login -u vitorpfi -p dckr_pat_TbshBzswebv-BIadYWNL1Oq7MbE
     - name: build image
-      run: docker build -t VitorPfi/study-api .
+      run: docker build -t vitorpfi/study-api .
     - name: push to registry
-      run: docker push VitorPfi/study-api
+      run: docker push vitorpfi/study-api
