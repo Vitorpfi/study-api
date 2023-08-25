@@ -1,0 +1,28 @@
+name: Building
+
+on:
+  push:
+    branches: [ "base" ]
+  pull_request:
+    branches: [ "base" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+    env: 
+      DOCKER_USER: VitorPfi
+      DOCKER_PASSWORD: dckr_pat_TbshBzswebv-BIadYWNL1Oq7MbE
+      REPOSITORY: study-api
+      
+    steps:
+    - uses: actions/checkout@v3
+    - name: docker login
+
+      run: |
+        docker login -u VitorPfi -p dckr_pat_TbshBzswebv-BIadYWNL1Oq7MbE
+    - name: build image
+      run: docker build -t VitorPfi/study-api .
+    - name: push to registry
+      run: docker push VitorPfi/study-api
