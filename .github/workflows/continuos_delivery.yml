@@ -15,7 +15,7 @@ jobs:
       DOCKER_USER: VitorPfi
       DOCKER_PASSWORD: dckr_pat_TbshBzswebv-BIadYWNL1Oq7MbE
       REPOSITORY: study-api
-      
+       
     steps:
     - uses: actions/checkout@v3
     - name: docker login
